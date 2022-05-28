@@ -33,7 +33,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     private String registerUserInAuthService(UserDTO user) throws JsonProcessingException {
-        String url = String.format("http://localhost:8081/register");
+        String url = String.format("http://34.91.3.123:8081/register");
         String response = webClientBuilder
                 .build()
                 .post()
