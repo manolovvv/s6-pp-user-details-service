@@ -70,7 +70,7 @@ jobs:
       - name: Build and push Docker
         run: |
           gcloud auth configure-docker europe-docker.pkg.dev
-          docker build -t europe-docker.pkg.dev/kalve-349610/kalve/user-details-service:latest .
-          docker image push europe-docker.pkg.dev/kalve-349610/kalve/user-details-service:latest
+          docker build -t europe-west4-docker.pkg.dev/thematic-mapper-351607/kalve/user-details-service:latest .
+          docker image push europe-west4-docker.pkg.dev/thematic-mapper-351607/kalve/user-details-service:latest
         
     
