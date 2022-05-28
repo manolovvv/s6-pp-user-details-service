@@ -1,15 +1,12 @@
 package com.userdetails.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.userdetails.dto.AuthDTO;
 import com.userdetails.dto.UserDTO;
 import com.userdetails.model.UserDetails;
 import com.userdetails.repository.UserDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -19,7 +16,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     UserDetailsRepository repository;
 
-    ObjectMapper objectMapper = new ObjectMapper();
 
     private final KafkaTemplate<String, String> template;
 
@@ -32,7 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails getUserDetailsById(Long id) {
-        return repository.getById(id);
+        return repository.getOne(id);
 
     }
 
