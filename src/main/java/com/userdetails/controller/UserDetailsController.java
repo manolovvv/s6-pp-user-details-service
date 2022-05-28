@@ -8,7 +8,6 @@ import com.userdetails.service.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 
 @RestController
 public class UserDetailsController {
@@ -18,7 +17,6 @@ public class UserDetailsController {
 
     @GetMapping(value = "/{id}")
     public UserDetailsResponse getUserDetailsById(@PathVariable Long id){
-        System.out.println(1);
         UserDetails userDetails = service.getUserDetailsById(id);
         try {
             return new UserDetailsResponse(userDetails.getFirstName(), userDetails.getFamilyName(), userDetails.getGender(), userDetails.getTelephoneNumber());
