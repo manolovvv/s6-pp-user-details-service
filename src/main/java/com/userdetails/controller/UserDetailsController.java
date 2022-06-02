@@ -32,8 +32,8 @@ public class UserDetailsController {
     }
 
     @DeleteMapping(value="/{id}")
-    public String deleteUser(@PathVariable Long id){
-        return service.deleteUserById(id);
+    public String deleteUser(@PathVariable Long id, @RequestHeader("Authorization") String token){
+        return service.deleteUserById(id, token);
     }
 
 }

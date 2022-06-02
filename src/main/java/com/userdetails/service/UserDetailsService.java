@@ -8,5 +8,5 @@ import com.userdetails.model.UserDetails;
 public interface UserDetailsService {
     UserDetails getUserDetailsById(Long id);
     String createNewUser(UserDTO user) throws JsonProcessingException;
-    String deleteUserById(Long id);
+    String deleteUserById(Long id, String token);
 }
